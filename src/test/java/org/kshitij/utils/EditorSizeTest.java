@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.kshitij.EditorICharacter;
 import org.kshitij.editor.EditorWithFlyweight;
 import org.kshitij.editor.EditorWithoutFlyweight;
-import org.kshitij.editor.IEditor;
+import org.kshitij.editor.Editor;
 import org.kshitij.factory.CharacterFactory;
 import org.kshitij.factory.FontFactory;
 import org.kshitij.flyweight.ICharacter;
@@ -26,8 +26,8 @@ public class EditorSizeTest {
 
     @Test
     public void testSpaceSaving() {
-        IEditor editorWithoutFlyweight = new EditorWithoutFlyweight(text);
-        IEditor editorWithFlyweight = new EditorWithFlyweight(text);
+        Editor editorWithoutFlyweight = new EditorWithoutFlyweight(text);
+        Editor editorWithFlyweight = new EditorWithFlyweight(text);
         System.out.println(editorWithFlyweight.size() + "-" + editorWithoutFlyweight.size());
         Assertions.assertTrue(editorWithFlyweight.size()<editorWithoutFlyweight.size());
     }
@@ -41,7 +41,7 @@ public class EditorSizeTest {
      */
     @Test
     public void testEditorSizeCalculation() {
-        IEditor editorWithFlyweight = new EditorWithFlyweight(text);
+        Editor editorWithFlyweight = new EditorWithFlyweight(text);
 
         double expectedSize = new SizeofUtil()  {
 

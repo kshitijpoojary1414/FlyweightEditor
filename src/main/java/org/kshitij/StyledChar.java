@@ -4,10 +4,10 @@ import org.kshitij.flyweight.ICharacter;
 
 import java.awt.*;
 
-public class EditorUnsharedCharacter implements ICharacter {
+public class StyledChar implements ICharacter {
     private int unicode;
     private Font font;
-    public EditorUnsharedCharacter(char character) {
+    public StyledChar(char character) {
         unicode = character;
     }
 
@@ -15,6 +15,7 @@ public class EditorUnsharedCharacter implements ICharacter {
         this.font = font;
     }
 
+    @Override
     public String toString() {
         return Character.toString((char)unicode);
     }

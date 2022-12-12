@@ -6,25 +6,25 @@ import java.util.HashMap;
 public class FontFactory {
     HashMap<String, Font> factory = new HashMap<>();
 
-    private static FontFactory singleInstance = null;
+    private static FontFactory instance = null;
 
     private FontFactory() {
 
     }
 
     public static FontFactory getInstance() {
-        if(singleInstance == null) {
-            singleInstance = new FontFactory();
+        if(instance == null) {
+            instance = new FontFactory();
         }
-        return singleInstance;
+        return instance;
     }
 
-    private String createHash(String fontName , int fontSize, int fontStyle) {
+    private String getHash(String fontName , int fontSize, int fontStyle) {
         return fontName + fontSize + fontStyle;
     }
 
     public Font getFont(String fontName , int fontSize, int fontStyle) {
-        String key = createHash(fontName,fontSize,fontStyle);
+        String key = getHash(fontName,fontSize,fontStyle);
         if(!factory.containsKey(key)) {
             factory.put(key, new Font(fontName, fontSize, fontStyle));
         }
@@ -32,6 +32,6 @@ public class FontFactory {
     }
 
     public static void clearInstance() {
-        singleInstance = new FontFactory();
+        instance = new FontFactory();
     }
 }
