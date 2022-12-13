@@ -4,13 +4,12 @@ import org.kshitij.EditorICharacter;
 import org.kshitij.factory.CharacterFactory;
 import org.kshitij.factory.FontFactory;
 import org.kshitij.flyweight.ICharacter;
-import org.kshitij.runarray.RunArray;
 import org.kshitij.utils.SizeofUtil;
 
-import java.awt.*;
 import java.util.*;
 
-public class EditorWithFlyweight implements IEditor{
+// Size here is hardcoded with 356, It should be generalized for editor text.
+public class EditorWithFlyweight implements Editor {
     private String text = "";
     private int noOfObjects = 0;
     public EditorWithFlyweight(String text) {

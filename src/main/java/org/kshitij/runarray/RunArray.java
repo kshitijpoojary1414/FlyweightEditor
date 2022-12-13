@@ -3,6 +3,8 @@ package org.kshitij.runarray;
 import java.awt.*;
 import java.util.ArrayList;
 
+
+//RunArray is only applicable with EditorWI
 public class RunArray {
 
     private ArrayList<FontInformation> runArray;

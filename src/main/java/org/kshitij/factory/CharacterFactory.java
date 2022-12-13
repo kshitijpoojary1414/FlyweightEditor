@@ -1,7 +1,5 @@
 package org.kshitij.factory;
 
-
-
 import org.kshitij.EditorICharacter;
 import org.kshitij.flyweight.ICharacter;
 
@@ -10,7 +8,7 @@ import java.util.HashMap;
 public class CharacterFactory {
     private static HashMap<Character, ICharacter> factory = new HashMap<>();
 
-    private static CharacterFactory singleInstance = null;
+    private static CharacterFactory instance = null;
 
     private CharacterFactory() {
     }
@@ -22,10 +20,10 @@ public class CharacterFactory {
         return factory.get(character);
     }
     public static CharacterFactory getInstance() {
-        if (singleInstance == null) {
-            singleInstance= new CharacterFactory();
+        if (instance == null) {
+            instance = new CharacterFactory();
         }
-        return singleInstance;
+        return instance;
     }
 
     public static void clearInstance() {
